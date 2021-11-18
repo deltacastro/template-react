@@ -52,4 +52,22 @@ class User extends Authenticatable
     public function setPasswordAttribute($value) {
         $this->attributes['password'] = Hash::make($value);
     }
+
+    /**
+     * ACCESORS
+     */
+
+    public function getPersonFullNameAttribute()
+    {
+        return $this->person->fullName ?? $this->email;
+    }
+
+    /**
+     * Relationships
+     */
+
+    public function person()
+    {
+        return $this->belongsTo(Person::class);
+    }
 }

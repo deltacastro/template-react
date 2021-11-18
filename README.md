@@ -18,6 +18,11 @@ Instalamos los paquetes
 composer install
 ```
 
+Generamos nuestra apikey de la aplicacion
+```
+php artisan key:generate
+```
+
 Modificamos el archivo .env para la conexión de BD, nombre app, entre otros.
 ```
 DB_CONNECTION=mysql
